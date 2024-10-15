@@ -1,0 +1,15 @@
+.card {
+    /* width: 250px; */
+    height: 400px;
+    margin: 5px;
+}
+
+img {
+    
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* O puedes usar cover dependiendo del comportamiento deseado */
+}
