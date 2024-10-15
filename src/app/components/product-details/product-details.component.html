@@ -12,14 +12,14 @@
         <div class="col-md-8">
             <div class="card-body">
                 <p>Category: {{product.category}}</p>
-                <h6 class="card-title">{{product.title}}</h6>
+                <h3 class="card-title">{{product.title}}</h3>
                 <p>
                     {{product.rating.rate}}
                     <span *ngFor="let star of getFullStars()">★</span>
                     <span *ngFor="let star of getEmptyStars()">☆</span>
                     ({{product.rating.count}})
                 </p>
-                <h5 class="card-text">$ {{getFormattedPrice().integerPart}}<sup>{{getFormattedPrice().decimalPart}}</sup></h5>
+                <h4 class="card-text">$ {{getFormattedPrice().integerPart}}<sup>{{getFormattedPrice().decimalPart}}</sup></h4>
                 <p>Description:<br>{{product.description}}</p>
             </div>
         </div>

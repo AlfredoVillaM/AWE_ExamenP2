@@ -16,15 +16,10 @@ export class ProductDetailsComponent {
   private router = inject(Router);
   product!: Product;
 
-  constructor(
-    private route: ActivatedRoute,
-  ) { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute,) {
+    this.productsService.fetchProducts();
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productsService.getProductById(id).subscribe((data) => {
-      this.product = data;
-    });
+    this.product = this.productsService.getProductById(id);
   }
 
   goBack(): void{

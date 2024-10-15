@@ -27,7 +27,13 @@ export class ProductsService {
     })
   }
 
-  getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}/${id}`);
-  }
+  getProductById(id: number): Product {
+    const product = this._products.find(p => p.id === id);
+  
+    if (!product) {
+      throw new Error(`Product with id ${id} not found`);
+    }
+
+    return product;
+    }
 }
