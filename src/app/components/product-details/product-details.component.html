@@ -1,3 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><button (click)="goBack()" class="btn btn-primary">Back</button></li>
+    </ol>
+</nav>
+  
 <div class="card mb-3">
     <div class="row g-0">
         <div class="col-md-4">
@@ -5,11 +11,16 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
+                <p>Category: {{product.category}}</p>
                 <h6 class="card-title">{{product.title}}</h6>
+                <p>
+                    {{product.rating.rate}}
+                    <span *ngFor="let star of getFullStars()">★</span>
+                    <span *ngFor="let star of getEmptyStars()">☆</span>
+                    ({{product.rating.count}})
+                </p>
                 <h5 class="card-text">$ {{getFormattedPrice().integerPart}}<sup>{{getFormattedPrice().decimalPart}}</sup></h5>
-                <p>{{product.description}}</p>
-                <p>{{product.category}}</p>
-                <p>{{product.rating.rate}} {{product.rating.count}}</p>
+                <p>Description:<br>{{product.description}}</p>
             </div>
         </div>
     </div>
